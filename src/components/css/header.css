@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+.background-col{
+    background: var(--bg-overall-color);
+}
+
+.header-item {
+    font-size: var(--text-size-tiny);
+    color: #AAAAAA;
+    font-weight: normal;
+    font-family: var(--font-jost);
+    position: relative;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.header-item::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background-color: #67CBB7;
+    transition: width 0.3s ease-in-out;
+}
+
+.header-item:hover::after {
+    width: 100%;
+}
+
+.header-item.active::after {
+    width: 100%;
+}
+
+.header-item.active {
+    color: #67CBB7;
+}
+
+.header-item:hover, .header-item-btn:hover {
+    color: #e5e5e5;
+    transform: scale(1.04);
+}
+
+
+.header-item-btn {
+    background-color: transparent;
+    border: 2px solid #6DC7C5;
+    padding: 5px 15px;
+    font-size: var(--text-size-tiny);
+    border-radius: 5px;
+    font-family: var(--font-jost);
+    font-weight: normal;
+    color: #AAAAAA;
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.header-item-btn::before {
+    content: "";
+    position: absolute;
+    width: 300%;
+    height: 300%;
+    top: -100%;
+    left: -100%;
+    background: conic-gradient(
+        transparent 0deg, 
+        #67CBB7 90deg, 
+        transparent 180deg, 
+        #67CBB7 270deg, 
+        transparent 360deg
+    );
+    border-radius: 50%;
+    transform: rotate(0deg);
+    animation: rotate-border 2s linear infinite;
+    z-index: -1;
+    opacity: 0;
+}
+
+@keyframes rotate-border {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.header-item-btn:hover::before {
+    opacity: 1;
+}
+
+.header-item-btn:hover {
+    color: #e5e5e5;
+    border-color: #67CBB7;
+}
+
+.header-item:hover, .header-item-btn:hover {
+    transform: scale(1.04);
+}

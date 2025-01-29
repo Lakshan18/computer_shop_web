@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: "Jost";
+    src: url('./assets/fonts/Jost-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "Quicksand";
+    src: url('./assets/fonts/Quicksand-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url('./assets/fonts/Roboto.ttf') format('truetype');
+}
+
+:root{
+    --bg-overall-color: linear-gradient(90deg, #1f1f1f 0%, #202020 63%, #242424 100%);
+
+    /* texts */
+    --text-size-tiny:calc(0.6rem + 0.6vh);
+    --text-size-small:calc(0.76rem + 0.76vh);
+    --text-size-medium:calc(1rem + 1vh);
+    --text-size-large:calc(1.5rem + 1.5vh);
+    --text-size-sub-heading:calc(2.2rem + 2.2vh);
+
+    --font-jost:"Jost";
+    --font-roboto:"Roboto";
+    --font-quicksand:"Quicksand";
+}
